@@ -27,5 +27,18 @@ public class ReconnaissanceJet extends Jet implements Recon {
 		super();
 		super.setRole(role);
 	}
+	@Override
+	public boolean missionRecon(Target target) {
+		System.out.println(super.getModel() + " performing recon on target: " + target);
+		int difficulty = target.getDifficulty();
+		double roll = Math.random();
+		if (roll < 0.75) {
+			System.out.println("Recon successful!");
+			target.setDifficulty((int)(difficulty * roll));
+			return true;
+		}
+		System.out.println("Recon unsuccessful.");
+		return false;
+	}
 
 }

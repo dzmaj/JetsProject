@@ -16,4 +16,21 @@ public class RefuelerJet extends Jet implements Refueler {
 		super.setRole(role);
 	}
 
+	@Override
+	public boolean missionRefuel(Jet jet) {
+		if (!jet.isRefuelable()) {
+			System.out.println(jet.getModel() + " is not air refuelable!");
+			return false;
+		}
+		refuel(jet);
+		if (Math.random() > 0.25) {
+			System.out.println("Refueling successful!");
+			return true;
+		}
+		else {
+			System.out.println("Refueling failed!");
+			return false;
+		}
+	}
+
 }

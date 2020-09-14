@@ -11,7 +11,7 @@ public abstract class Jet {
 //	private String tailNumber;
 	
 	public double getFlightTime() {
-		return ((double)range) / speed;
+		return (((double)range) / speed);
 	}
 	
 	public void fly() {
@@ -72,9 +72,9 @@ public abstract class Jet {
 		builder.append(speed);
 		builder.append(", Range: ");
 		builder.append(range);
-		builder.append(", Price: ");
+		builder.append(", Price: $");
 		builder.append(price);
-		builder.append(", Refuelable: ");
+		builder.append(", Air Refuelable: ");
 		builder.append(refuelable);
 		builder.append(")");
 		return builder.toString();

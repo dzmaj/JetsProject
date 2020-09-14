@@ -10,9 +10,10 @@ This program creates a fleet of different jets with different capabilities, and 
 - Interfaces
 - I/O
 - ArrayList
+- Exceptions, Try/Catch
 
 ### Lessons learned
-This is the largest project I have done so far, and it uses several different classes and interfaces. The biggest challenge was in implementing some of the stretch goals that I wanted to accomplish, but did not quite finish. Originally I wanted to have a mission mode that would simulate a full contingency operation where all the jets would simultaneously fly, simulate using fuel/having limited range, get air refueled by tankers as needed, have "target" objects that the reconnaissance jets would have to pass to the bombers, and have them bomb the targets. I didn't do all that, but I got close enough to where I was refactoring some of the things that would need to be changed for that - which was a learning experience just in thinking about the project's structure as a whole.
+This is the largest project I have done so far, and it uses several different classes and interfaces. The biggest challenge was in implementing some of the stretch goals that I wanted to accomplish. I didn't quite finish everything I wanted, but I did barely manage to implement the "mission mode", which is an expanded simulation. The biggest difficulty was in figuring out how to structure and refactor as I added more things. I ran into difficulty in several places when I got runtime exceptions for "concurrent modification" because I tried to remove objects from an ArrayList while in a forEach loop for the ArrayList.
 
 ### How to Run
 1. Upon running the program, the jets in jets.txt will be added to the fleet.
@@ -26,3 +27,4 @@ This is the largest project I have done so far, and it uses several different cl
     7. Perform bombing missions: all bombers will "bomb targets"
     8. Add/remove a jet: Select a jet from the fleet and remove it, or enter information for a new jet as prompted and add it to the Fleet
     9. Exit: exit the program
+    0. Run mission mode: run a "full" simulation where you can select a number of targets and the range to the targets. All the jets will be launched, and those that need air refueling to reach the targets will attempt to do so. Recon jets will attempt to "locate" targets and put them in a target list for bombers. Bombers will attempt to bomb the targets. At the end a mission summary will be shown.

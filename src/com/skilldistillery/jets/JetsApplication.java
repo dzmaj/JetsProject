@@ -3,6 +3,7 @@ package com.skilldistillery.jets;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -62,7 +63,7 @@ public class JetsApplication {
 		System.out.println("3. View fastest jet             4. View jet with longest range");
 		System.out.println("5. Perform refueling missions   6. Perform reconnaissance missions");
 		System.out.println("7. Perform bombing missions     8. Add/remove a jet");
-		System.out.println("9. Exit");
+		System.out.println("9. Exit                         0. Run mission mode");
 		System.out.println();
 	}
 
@@ -102,13 +103,34 @@ public class JetsApplication {
 				addRemoveJet();
 				break;
 			case "9":
+				System.out.println("Exiting...");
 				keepGoing = false;
 				break;
+			case "0":
+				runMissionMode();
+				break;
+				
 			default:
 				System.out.println("Invalid input");
 				break;
 			}
 		}
+	}
+	
+	private void runMissionMode() {
+		System.out.println("Enter a range for the mission: ");
+		int range = sc.nextInt();
+		sc.nextLine();
+		System.out.println("How many targets would you like? ");
+		int numTargets = sc.nextInt();
+		sc.nextLine();
+		ArrayList<Target> targets = new ArrayList<>();
+		for (int i = 0; i < numTargets; i++) {
+			targets.add(new Target());
+		}
+		Mission mission = new Mission(range, airField.getJets(), targets);
+		System.out.println("Running mission...");
+		mission.run();
 	}
 
 	private void addRemoveJet() {
@@ -227,11 +249,10 @@ public class JetsApplication {
 	}
 
 	private void deleteJet() {
-		List<Jet> jets = airField.getJets();
+		ArrayList<Jet> jets = airField.getJets();
 		for (int i = 0; i < jets.size(); i++) {
 			System.out.println(i + ") " + jets.get(i));
 		}
-		int input;
 		try {
 			System.out.println("Please select the number of the jet you would like to remove:");
 			airField.removeJet(sc.nextInt());

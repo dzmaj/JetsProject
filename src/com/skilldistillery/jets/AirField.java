@@ -5,7 +5,7 @@ import java.util.List;
 
 public class AirField {
 
-	private List<Jet> jets;
+	private ArrayList<Jet> jets;
 	// Not really used... had plans but didnt finish
 	private int capacity;
 
@@ -14,11 +14,11 @@ public class AirField {
 		this.jets = new ArrayList<>();
 	}
 
-	public List getJets() {
+	public ArrayList getJets() {
 		return jets;
 	}
 
-	public void setJets(List jets) {
+	public void setJets(ArrayList jets) {
 		this.jets = jets;
 	}
 
