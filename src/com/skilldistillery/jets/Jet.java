@@ -8,15 +8,14 @@ public abstract class Jet {
 	private int range;
 	private int price;
 	private boolean refuelable;
-//	private String tail;
+//	private String tailNumber;
 	
 	public double getFlightTime() {
-		// max flight time = range / speed
 		return ((double)range) / speed;
 	}
 	
 	public void fly() {
-		System.out.println(this + "can fly for " + getFlightTime() + " hours");
+		System.out.println(this + " is flying and can fly for " + getFlightTime() + " hours");
 	}
 
 	public String getModel() {
@@ -95,6 +94,49 @@ public abstract class Jet {
 
 	public void setRefuelable(boolean refuelable) {
 		this.refuelable = refuelable;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((model == null) ? 0 : model.hashCode());
+		result = prime * result + price;
+		result = prime * result + range;
+		result = prime * result + (refuelable ? 1231 : 1237);
+		result = prime * result + ((role == null) ? 0 : role.hashCode());
+		result = prime * result + speed;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Jet other = (Jet) obj;
+		if (model == null) {
+			if (other.model != null)
+				return false;
+		} else if (!model.equals(other.model))
+			return false;
+		if (price != other.price)
+			return false;
+		if (range != other.range)
+			return false;
+		if (refuelable != other.refuelable)
+			return false;
+		if (role == null) {
+			if (other.role != null)
+				return false;
+		} else if (!role.equals(other.role))
+			return false;
+		if (speed != other.speed)
+			return false;
+		return true;
 	}
 	
 	

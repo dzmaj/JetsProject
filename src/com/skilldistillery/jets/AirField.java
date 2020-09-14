@@ -6,6 +6,7 @@ import java.util.List;
 public class AirField {
 
 	private List<Jet> jets;
+	// Not really used... had plans but didnt finish
 	private int capacity;
 
 	public AirField(int capacity) {

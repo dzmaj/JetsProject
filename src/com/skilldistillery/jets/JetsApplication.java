@@ -60,8 +60,8 @@ public class JetsApplication {
 		System.out.println("Please Select an option:");
 		System.out.println("1. List fleet                   2. Fly all jets");
 		System.out.println("3. View fastest jet             4. View jet with longest range");
-		System.out.println("5. Perform refueling mission    6. Perform reconnaissance mission");
-		System.out.println("7. Perform bombing mission      8. Add/remove a jet");
+		System.out.println("5. Perform refueling missions   6. Perform reconnaissance missions");
+		System.out.println("7. Perform bombing missions     8. Add/remove a jet");
 		System.out.println("9. Exit");
 		System.out.println();
 	}

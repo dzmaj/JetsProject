@@ -17,7 +17,7 @@ public class ReconnaissanceJet extends Jet implements Recon {
 	}
 	@Override
 	public void doRecon(Refueler tanker, Bomber bomber) {
-		
+		//
 	}
 
 	public ReconnaissanceJet(String model, String role, int speed, int range, int price, boolean refuelable) {
