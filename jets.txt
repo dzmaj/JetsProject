@@ -1,0 +1,9 @@
+KC-135,Refueling,530,1500,39600000,false
+RC-135,Reconnaissance,500,3900,170000000,true
+B-1B,Bomber,900,15000,317000000,true
+U-2,Reconnaissance,410,7010,9100000,false
+B-2,Bomber,700,20000,1157000000,true
+B-52,Bomber,650,8800,84000000,true
+RQ-4,Reconnaissance,357,12300,131000000,false
+KC-135,Refueling,530,1500,39600000,false
+KC-135,Refueling,530,1500,39600000,false
